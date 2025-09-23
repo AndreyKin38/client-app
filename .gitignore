@@ -5,3 +5,4 @@ Makefile
 logs/
 .DS_Store
 .idea
+.ipynb_checkpoints/
