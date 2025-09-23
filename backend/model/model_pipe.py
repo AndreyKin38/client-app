@@ -163,6 +163,13 @@ def main():
         }, file)
 
 
+def get_model():
+    with open('model/client_pipe.pkl', 'rb') as file:
+        model = dill.load(file)
+
+    return model
+
+
 if __name__ == "__main__":
     main()
 
