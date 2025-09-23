@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from backend.db_connection import get_session
 
 import dill
-from model.model_pipe import get_model
+from model import get_model
 
 
 router = APIRouter(prefix="/model", tags=["model"])
