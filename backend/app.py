@@ -27,13 +27,13 @@ def get_client_data(limit: int, db: Session = Depends(get_session)):
 #     return query
 
 
-def predict(id_client: int):
-    db = get_session()
-    query = db.query(Client).where(Client.id_client == id_client).scalar()
-    print(query.agreement_rk)
-    return query
+# def predict(id_client: int):
+#     db = get_session()
+#     query = db.query(Client).where(Client.id_client == id_client).scalar()
+#     print(query.agreement_rk)
+#     return query
 
 
-if __name__ == "__main__":
-    predict(106805103)
+# if __name__ == "__main__":
+#     predict(106805103)
 
