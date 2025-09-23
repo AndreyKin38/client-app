@@ -1,0 +1,7 @@
+poetry.lock
+pyproject.toml
+Makefile
+*.log
+logs/
+.DS_Store
+.idea
