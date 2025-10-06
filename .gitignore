@@ -10,5 +10,8 @@ logs/
 .idea
 .ipynb_checkpoints/
 alembic.ini
+
 alembic/
 create_table.py
+
+
