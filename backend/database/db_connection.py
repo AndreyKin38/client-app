@@ -1,11 +1,12 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
+
 from settings import Settings
 
 
 settings = Settings()
-engine = create_engine(settings.DB_URL)
+engine = create_engine(settings.db_url)
 
 # Base = declarative_base()
 
