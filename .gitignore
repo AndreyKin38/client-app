@@ -5,8 +5,12 @@ Makefile
 logs/
 .DS_Store
 .idea
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*/.ipynb_checkpoints/*.ipynb
+/.ipynb_checkpoints/*.ipynb
 **/*.ipynb_checkpoints/
-**/*__pycache__/
+__pycache__/
 alembic.ini
 alembic/
 create_table.py
