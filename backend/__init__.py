@@ -1,5 +1,10 @@
-from backend.app import router
+from backend.handlers.app import router as router1
+from backend.dependancy import get_client_repository, get_cache_repository
 
-routers = [router]
+__all__ = [
+    'router1',
+    'get_client_repository',
+    'get_cache_repository'
+]
 
 
