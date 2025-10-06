@@ -1,12 +1,14 @@
 poetry.lock
+.venv
+__pycache__/
+*.local*
 pyproject.toml
 Makefile
 *.log
 logs/
 .DS_Store
 .idea
-**/*.ipynb_checkpoints/
-**/*__pycache__/
+.ipynb_checkpoints/
 alembic.ini
 alembic/
 create_table.py
