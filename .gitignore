@@ -7,3 +7,6 @@ logs/
 .idea
 .ipynb_checkpoints/
 __pycache__/
+alembic.ini
+alembic/
+create_table.py

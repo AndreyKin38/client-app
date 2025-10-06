@@ -1,11 +1,8 @@
-from backend.schemas.model_schemas import Form, Prediction
-from backend.schemas.model_schemas import Client, ClientPredict
+from backend.schemas.client_db_schemas import Form, Prediction
 
 __all__ = [
     'Form',
-    'Prediction',
-    'Client',
-    'ClientPredict'
+    'Prediction'
 ]
 
 

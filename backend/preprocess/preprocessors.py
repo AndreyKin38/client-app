@@ -16,8 +16,6 @@ class ClientDataset:
 
         if transformer:
             self.df_transformed = transformer.fit_transform(self.df)
-        else:
-            self.df_transformed = None
 
     @property
     def X(self) -> pd.DataFrame:

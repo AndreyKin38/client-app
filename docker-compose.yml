@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: always
+    container_name: psgl_clients
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=client_data
+    ports:
+      - '5544:5432'
+#    volumes:
+#      - postgres-data:/var/lib/postgresql/data
+#    networks:
+#      - dbnet
+
+
+  cache:
+    image: redis:7.2.4-alpine
+    restart: always
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+
+#
+#networks:
+#  dbnet:
+#    driver: bridge
+#
+#volumes:
+#    postgres-data:
