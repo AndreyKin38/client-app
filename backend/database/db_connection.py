@@ -1,5 +1,7 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy.orm import sessionmaker
+from typing import Any
+from sqlalchemy.orm import DeclarativeBase, declared_attr
 
 
 from settings import Settings
@@ -8,7 +10,6 @@ from settings import Settings
 settings = Settings()
 engine = create_engine(settings.db_url)
 
-# Base = declarative_base()
 
 SessionLocal = sessionmaker(
     autocommit=False,
@@ -21,9 +22,16 @@ def get_session() -> SessionLocal:
     with SessionLocal() as session:
         return session
 
-# if __name__ == "__main__":
-#     Base.metadata.create_all(engine)
 
+class Base(DeclarativeBase):
+    id: Any
+    __name__: str
+
+    __allow_unmapped__ = True
+
+    @declared_attr
+    def __tablename__(self) -> str:
+        return self.__name__.lower()
 
 
 

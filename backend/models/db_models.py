@@ -1,20 +1,7 @@
-from typing import Any
 from sqlalchemy import Column, Integer, Float, String
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import DeclarativeBase, declared_attr
 
-# from backend.database.db_connection import Base, engine
-
-
-class Base(DeclarativeBase):
-    id: Any
-    __name__: str
-
-    __allow_unmapped__ = True
-
-    @declared_attr
-    def __tablename__(self) -> str:
-        return self.__name__.lower()
+from backend.database import Base
 
 
 class Client(Base):
@@ -37,7 +24,7 @@ class Client(Base):
     family_income = Column(String)
     personal_income = Column(Float)
     id_client = Column(Integer,
-                       ForeignKey('public.predictions.id_client'),
+                       # ForeignKey('public.predictions.id_client'),
                        primary_key=True)
     gen_industry = Column(String)
     gen_title = Column(String)
@@ -58,22 +45,11 @@ class ClientPredict(Base):
     __table_args__ = {'schema': 'public', 'extend_existing': True}
 
     id_client = Column(Integer,
-                       ForeignKey('public.clients.id_client'),
+                       # ForeignKey('public.clients.id_client'),
                        primary_key=True)
     agreement_rk = Column(Integer,
                           primary_key=True)
     prediction = Column(Float)
 
 
-# if __name__ == "__main__":
-#     Base.metadata.create_all(bind=engine)
-
-
-#     session = SessionLocal()
-#     result = (
-#         session.query(Client)
-#         .filter(Client.reg_address_province == 'Московская область')
-#         .limit(5)
-#         .all()
-#     )
 

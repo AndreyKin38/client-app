@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import select, inspect, delete
 from sqlalchemy.orm import Session
 
-from backend.database import get_session, Client, ClientPredict
+from backend.models import Client, ClientPredict
 from backend.schemas import Form, Prediction
 
 
